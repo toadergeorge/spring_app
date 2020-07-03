@@ -15,6 +15,7 @@ public class SingerToSingerEntityMapper implements Converter<Singer, SingerEntit
     @Override
     public SingerEntity convert(Singer source) {
         return SingerEntity.builder()
+                           .id(source.getId())
                            .firstName(source.getFirstName())
                            .lastName(source.getLastName())
                            .birthDate(source.getBirthDate())
