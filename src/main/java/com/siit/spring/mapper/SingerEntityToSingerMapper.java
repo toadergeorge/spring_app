@@ -24,6 +24,7 @@ public class SingerEntityToSingerMapper implements Converter<SingerEntity, Singe
         return Singer.builder()
                      .id(source.getId())
                      .firstName(source.getFirstName())
+                     .lastName(source.getLastName())
                      .birthDate(source.getBirthDate())
                      .albums(mapAlbumsList(source.getAlbums()))
                      .build();

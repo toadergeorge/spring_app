@@ -45,6 +45,13 @@ public class SingerService {
                          .collect(Collectors.toList());
     }
 
+    public void delete(Long id){
+        SingerEntity existingEntity = repository.findById(id)
+                .orElseThrow(() -> new SingerNotFoundException("The singer with id provided cannot be found"));
+
+        repository.delete(existingEntity);
+    }
+
     public Singer update(Singer singer) {
         SingerEntity singerEntity = singerToSingerEntityMapper.convert(singer);
         singerEntity.setId(singer.getId());
